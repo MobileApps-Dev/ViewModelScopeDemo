@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
-        viewModel.getUserData()
+        //viewModel.getUserData()   // Use when ViewModelScope
         viewModel.users.observe(this, Observer { response ->
             response.forEach{
                 Log.i("MyTag", "name is ${it.name}")
